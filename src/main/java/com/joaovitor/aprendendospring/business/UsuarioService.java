@@ -22,7 +22,7 @@ public class UsuarioService {
             usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
             return usuarioRepository.save(usuario);
         } catch (ConflitExceptions e) {
-            throw new ConflitExceptions("E-mail já cadastrado", e.getCause());
+            throw new ConflitExceptions("E-mail informado já cadastrado", e.getCause());
         }
     }
 
